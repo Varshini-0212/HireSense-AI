@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; color: #182230; background: #f5f8fa; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f5f8fa; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+.font-display { font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif; }
+@layer components {
+  .card { @apply rounded-2xl border border-slate-200/80 bg-white shadow-[0_10px_30px_rgba(22,50,79,0.045)]; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#16324F] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#224b70] focus:outline-none focus:ring-2 focus:ring-[#0B8A84]/30 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-[#16324F] transition hover:border-[#0B8A84] hover:text-[#0B8A84] focus:outline-none focus:ring-2 focus:ring-[#0B8A84]/20; }
+  .input { @apply mt-1 w-full rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-sm text-slate-800 outline-none transition focus:border-[#0B8A84] focus:ring-4 focus:ring-[#0B8A84]/10; }
+  .label { @apply text-xs font-bold text-slate-600; }
+}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }

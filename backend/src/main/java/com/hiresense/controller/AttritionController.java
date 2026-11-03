@@ -1,0 +1,3 @@
+package com.hiresense.controller;
+import com.hiresense.dto.AttritionDtos.*; import com.hiresense.service.AttritionService; import org.springframework.security.access.prepost.PreAuthorize; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController @RequestMapping("/api/attrition") @PreAuthorize("hasAnyRole('HR','ADMIN')") public class AttritionController {private final AttritionService s;public AttritionController(AttritionService x){s=x;} @PostMapping("/predict/{employeeId}") PredictionResponse predict(@PathVariable Long employeeId){return s.predict(employeeId);} @PostMapping("/train") Map<String,Object> train(){return s.train();} @GetMapping("/dashboard") DashboardResponse dashboard(){return s.dashboard();} }

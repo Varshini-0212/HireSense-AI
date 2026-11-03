@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: hiresense-backend
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+server:
+  port: ${SERVER_PORT:8080}
+ml:
+  service:
+    url: ${ML_SERVICE_URL:http://localhost:8000}
+resume:
+  storage-path: ${RESUME_STORAGE_DIR:./data/resumes}
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    validity-ms: ${JWT_VALIDITY_MS:3600000}
+  cors:
+    allowed-origins: "${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}"
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+logging:
+  level:
+    com.hiresense: INFO
+    org.hibernate.SQL: WARN

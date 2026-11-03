@@ -1,0 +1,38 @@
+# Java / Maven
+backend/target/
+*.class
+
+# React / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Python
+ml-service/.venv/
+ml-service/**/__pycache__/
+ml-service/.pytest_cache/
+
+# Runtime data and trained models
+backend/data/
+ml-service/data/
+ml-service/models/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Local runtime data
+data/
+
+# Root Python virtual environment
+.venv/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+.sf/
